@@ -1,0 +1,56 @@
+{{>./header}}
+
+<h3>PCR 병원 조회 서비스</h3>
+
+<form>
+  <div class="mb-3 mt-3">
+    <select
+      class="form-select form-select-sm mt-3"
+      name="sidoCdNm"
+      id="sidoCdNm"
+    >
+      {{#sidoCdNm}}
+      <option>{{ . }}</option>
+      {{/sidoCdNm}}
+    </select>
+  </div>
+  <div class="mb-3">
+    <select
+      class="form-select form-select-sm mt-3"
+      name="sgguCdNm"
+      id="sgguCdNm"
+    >
+      {{#sgguCdNm}}
+      <option>{{ . }}</option>
+      {{/sgguCdNm}}
+    </select>
+  </div>
+  <button type="button" class="btn btn-primary" id="btn-submit">
+    병원찾기
+  </button>
+</form>
+
+<hr />
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>병원명</th>
+      <th>PCR검사여부</th>
+      <th>병원주소</th>
+    </tr>
+  </thead>
+  <tbody id="tbody-hospital">
+    {{#hospitals}}
+    <tr>
+      <td>{{ yadmNm }}</td>
+      <td>{{ pcrPsblYn }}</td>
+      <td>{{ addr }}</td>
+    </tr>
+    {{/hospitals}}
+  </tbody>
+</table>
+
+<script src="js/search.js"></script>
+
+{{>./footer}}
