@@ -12,7 +12,7 @@ sidoCdNmDom.addEventListener("change", (e) => {
 let getSuggucdnm = async (sidoCdNm) => {
   //백틱 숫자 1옆에있는 `사용하면 자바스크립트 변수값 바인딩 가능
   let response = await fetch(
-    `http://3.36.25.145:5000/api/sggucdnm?sidoCdNm=${sidoCdNm}`
+    `http://3.36.25.145:8080/api/sggucdnm?sidoCdNm=${sidoCdNm}`
   );
   let responsePasing = await response.json();
   // console.log(responsePasing);
@@ -43,7 +43,7 @@ document.querySelector("#btn-submit").addEventListener("click", (e) => {
 //도,시군구 정보로 병원목록 가져오기
 let getHospital = async (sidoCdNm, suggCdnm) => {
   let response = await fetch(
-    `http://3.36.25.145:5000/api/hospital?sidoCdNm=${sidoCdNm}&suggCdnm=${suggCdnm}`
+    `http://3.36.25.145:8080/api/hospital?sidoCdNm=${sidoCdNm}&suggCdnm=${suggCdnm}`
   );
   let responsePasing = await response.json();
   // console.log(responsePasing);
