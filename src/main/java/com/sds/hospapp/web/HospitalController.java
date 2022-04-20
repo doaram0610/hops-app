@@ -7,11 +7,13 @@ import com.sds.hospapp.domain.HospitalRepository;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 
+@CrossOrigin
 @RequiredArgsConstructor    //final 객체의 생성자 만들기
 @Controller
 public class HospitalController {
